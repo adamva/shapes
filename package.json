@@ -1,7 +1,6 @@
 {
-  "name": "Project1",
+  "name": "shapes",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,5 +10,7 @@
   "dependencies": {
     "@simonwep/pickr": "^1.5.1",
     "paper": "^0.12.4"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
