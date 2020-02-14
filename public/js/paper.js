@@ -22,9 +22,6 @@ function onMouseDrag(e){
     }
 }
 
-function onMouseUp(e){
-}
-
 globals.makeShape = function() {
     switch(globals.shape){
         case 'square':
@@ -51,5 +48,7 @@ globals.makeShape = function() {
 }
 
 globals.changeColor = function(){
-    project.selectedItems[0].fillColor = globals.color;
+    if(project.selectedItems[0]){
+        project.selectedItems[0].fillColor = globals.color;
+    }    
 }
