@@ -1,6 +1,6 @@
 window.globals = { 
     shape: 'square', 
-    color: 'red' 
+    color: '#42445a' 
 };
 
 $(document).ready(function () {

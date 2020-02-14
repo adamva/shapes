@@ -1,7 +1,7 @@
 $(document).ready(function () {
     const pickr = Pickr.create({
         el: '.color-picker',
-        theme: 'nano', // or 'monolith', or 'nano'
+        theme: 'classic',
         comparison: false,
         swatches: [
             'rgba(244, 67, 54, 1)',
