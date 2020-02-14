@@ -8,7 +8,6 @@ var curShape;
 function onMouseDown(e){
     project.activeLayer.selected = false;
     if(e.item){
-        e.item.fillColor = globals.color;
         e.item.selected = true;
     }
 }
@@ -27,12 +26,27 @@ globals.curParams = function(){
 }
 
 globals.makeShape = function() {
-    if (globals.shape == 'square') {
-        curShape = new Path.Rectangle(new Point(100, 100), new Size(200, 100));
-        curShape.fillColor = globals.color;
-    } else if (globals.shape == 'circle') {
-        curShape = new Path.Circle(new Point(100, 100), 50);
-        curShape.fillColor = globals.color;
+    switch(globals.shape){
+        case 'square':
+            curShape = new Path.Rectangle(new Point(100, 100), new Size(100, 100));
+            curShape.fillColor = globals.color;
+            break;
+        case 'circle':
+            curShape = new Path.Circle(new Point(100, 100), 50);
+            curShape.fillColor = globals.color;
+            break;
+        case 'star':
+            curShape = new Path.Star(new Point(100, 100), 5, 60, 30);
+            curShape.fillColor = globals.color;
+            break;
+        case 'rectangle':
+            curShape = new Path.Rectangle(new Point(100, 100), new Size(200, 100));
+            curShape.fillColor = globals.color;
+            break;
+        case 'triangle':
+            curShape = new Path.RegularPolygon(new Point(100, 100), 3, 60);
+            curShape.fillColor = globals.color;
+            break;
     }
 }
 
