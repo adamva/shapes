@@ -4,7 +4,11 @@
 // curShape.fillColor = globals.color;
 
 var curShape;
+var centerScreen = new Point(view.viewSize._width/2, view.viewSize._height/2);
 
+view.onResize = function(e) {
+    centerScreen = new Point(view.viewSize._width/2, view.viewSize._height/2);
+}
 function onMouseDown(e){
     project.activeLayer.selected = false;
     if(e.item){
@@ -21,30 +25,26 @@ function onMouseDrag(e){
 function onMouseUp(e){
 }
 
-globals.curParams = function(){
-    console.log('Shape: ' + globals.shape + ' Color: ' + globals.color);
-}
-
 globals.makeShape = function() {
     switch(globals.shape){
         case 'square':
-            curShape = new Path.Rectangle(new Point(100, 100), new Size(100, 100));
+            curShape = new Path.Rectangle(centerScreen, new Size(100, 100));
             curShape.fillColor = globals.color;
             break;
         case 'circle':
-            curShape = new Path.Circle(new Point(100, 100), 50);
+            curShape = new Path.Circle(centerScreen, 50);
             curShape.fillColor = globals.color;
             break;
         case 'star':
-            curShape = new Path.Star(new Point(100, 100), 5, 60, 30);
+            curShape = new Path.Star(centerScreen, 5, 60, 30);
             curShape.fillColor = globals.color;
             break;
         case 'rectangle':
-            curShape = new Path.Rectangle(new Point(100, 100), new Size(200, 100));
+            curShape = new Path.Rectangle(centerScreen, new Size(200, 100));
             curShape.fillColor = globals.color;
             break;
         case 'triangle':
-            curShape = new Path.RegularPolygon(new Point(100, 100), 3, 60);
+            curShape = new Path.RegularPolygon(centerScreen, 3, 60);
             curShape.fillColor = globals.color;
             break;
     }
